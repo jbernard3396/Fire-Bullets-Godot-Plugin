@@ -113,7 +113,7 @@ func shoot(speed:float=200,angle:float=0.0):
 				startAngle = rotation_degrees-(Firing_Arc / 2)
 			for b in NBS:
 				var new_bullet = bullet.instantiate()
-				assert(new_bullet is Bullet == false, "Your bullet must extend on the Bullet class")
+				assert(new_bullet.get_class() == "Bullet", "Your bullet must extend on the Bullet class")
 				new_bullet.global_position = spawn_point_node.global_position# + global_position)
 				new_bullet.top_level = true
 				new_bullet.speed = speed
